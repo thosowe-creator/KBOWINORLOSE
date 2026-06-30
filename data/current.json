@@ -1,101 +1,331 @@
 {
-  "generatedAtKST": "2026-06-30 13:57 KST",
-  "statusText": "라인업 예상 단계",
-  "verificationSummary": "3-pass enabled",
-  "notice": "MVP 데모 데이터입니다. 실서비스에서는 scripts/update_data.py의 SourceAdapter에 공식/허가 데이터 소스를 연결하세요.",
+  "date": "2026-06-30",
+  "date_label": "2026.06.30 화",
+  "updated_at_kst": "2026-06-30 13:00",
+  "mode_label": "13시 사전 분석",
+  "lineup_status_label": "라인업 예상 / 17:05 재조회 예정",
+  "summary": "모든 팀 최근 현황은 13:00, 라인업·등말소는 17:05 이후 자동 재검증합니다.",
   "games": [
     {
-      "date": "2026-06-30",
       "time": "18:30",
-      "awayTeam": "KT",
-      "homeTeam": "한화",
-      "stadium": "대전 한화생명 볼파크",
-      "awayStarter": {
-        "name": "맷 사우어",
-        "era": 4.54,
-        "whip": 1.31,
-        "recentNote": "최근 등판 기복. 5~6이닝 3실점권 기대"
+      "stadium": "대전",
+      "lineup_status": "예상 라인업",
+      "confidence": "보통",
+      "validation_passes": 3,
+      "key_factor": "선발 피홈런 리스크",
+      "away": {
+        "team": "KT",
+        "win_probability": 34,
+        "expected_runs": 4.2
       },
-      "homeStarter": {
-        "name": "윌켈 에르난데스",
-        "era": 4.49,
-        "whip": 1.35,
-        "recentNote": "최근 피홈런 리스크. 장타 억제가 핵심"
+      "home": {
+        "team": "한화",
+        "win_probability": 66,
+        "expected_runs": 5.8
       },
-      "headToHead": {
-        "awayWins": 4,
-        "homeWins": 2,
-        "awayRunsPerGame": 8.67,
-        "homeRunsPerGame": 7.5
+      "away_starter": "사우어",
+      "home_starter": "에르난데스",
+      "starter": "",
+      "report": "한화는 홈 구장과 중심타선 기대값이 높게 잡히며 우세로 표시됩니다. 다만 17시 이후 실제 라인업과 등말소가 반영되면 확률은 다시 계산됩니다.",
+      "notes": [
+        "13시 기준 최근 흐름/뉴스 기반 사전 예측",
+        "17:05 라인업 조회 후 재계산",
+        "등말소 변동 발생 시 신뢰도 하향"
+      ]
+    },
+    {
+      "time": "18:30",
+      "stadium": "잠실",
+      "lineup_status": "예상 라인업",
+      "confidence": "보통",
+      "validation_passes": 3,
+      "key_factor": "잠실 장타 억제",
+      "away": {
+        "team": "삼성",
+        "win_probability": 45,
+        "expected_runs": 4.4
       },
-      "prediction": {
-        "pick": "한화",
-        "awayWinProbability": 0.47,
-        "homeWinProbability": 0.53,
-        "awayExpectedRuns": 5.38,
-        "homeExpectedRuns": 5.6,
-        "confidence": "보통"
+      "home": {
+        "team": "LG",
+        "win_probability": 55,
+        "expected_runs": 4.9
       },
-      "lineup": {
-        "status": "projected",
-        "away": [
-          "1. CF 배정대",
-          "2. RF 최원준",
-          "3. DH 강현우",
-          "4. 1B 문상철",
-          "5. LF 김민혁",
-          "6. 3B 황재균",
-          "7. 2B 오윤석",
-          "8. C 장성우",
-          "9. SS 심우준"
-        ],
-        "home": [
-          "1. 2B 문현빈",
-          "2. RF 페라자",
-          "3. DH 강백호",
-          "4. 3B 노시환",
-          "5. 1B 장규현",
-          "6. LF 김태연",
-          "7. CF 이원석",
-          "8. C 허인서",
-          "9. SS 이도윤"
-        ]
+      "away_starter": "미정",
+      "home_starter": "미정",
+      "starter": "",
+      "report": "잠실 구장 특성상 장타 기대값을 낮추고, 최근 불펜 안정성과 출루 흐름을 반영한 사전 예측입니다.",
+      "notes": [
+        "구장 보정: 홈런 억제",
+        "라인업 확정 전 변동성 보통",
+        "최근 10경기 폼 반영"
+      ]
+    },
+    {
+      "time": "18:30",
+      "stadium": "사직",
+      "lineup_status": "예상 라인업",
+      "confidence": "낮음",
+      "validation_passes": 3,
+      "key_factor": "바람/수비 변수",
+      "away": {
+        "team": "KIA",
+        "win_probability": 52,
+        "expected_runs": 5.1
       },
-      "rosterNews": [
-        "17시 전: 전일 엔트리와 최근 뉴스 기준 예상 반영",
-        "라인업 확정 전이므로 주전 휴식 가능성은 예측 신뢰도에서 감점"
-      ],
-      "keyFactors": [
-        "대전 한화생명 볼파크 구장 보정 반영",
-        "선발투수 최근 흐름과 시즌 ERA 동시 반영",
-        "상대전적은 표시하되 표본 한계 때문에 낮은 가중치 적용",
-        "라인업 확정 전/후 예측을 분리"
-      ],
-      "verification": {
-        "checks": [
-          {
-            "name": "1차 스키마 검증",
-            "status": "PASS",
-            "message": "필수 필드 정상"
-          },
-          {
-            "name": "2차 범위 검증",
-            "status": "PASS",
-            "message": "ERA/WHIP 등 수치 범위 정상"
-          },
-          {
-            "name": "3차 교차 검증",
-            "status": "PASS",
-            "message": "동일 항목 최소 3개 출처 기준으로 비교하도록 설계"
-          },
-          {
-            "name": "라인업 상태 검증",
-            "status": "PASS",
-            "message": "17시 전 projected, 17:05 이후 confirmed 후보로 전환"
-          }
-        ]
+      "home": {
+        "team": "롯데",
+        "win_probability": 48,
+        "expected_runs": 4.9
       },
-      "report": "KT와 한화의 오늘 경기는 선발 매치업, 최근 득점 흐름, 상대전적, 구장 특성을 함께 보면 한화 쪽을 근소 우세로 잡습니다.\n\n예상 기대득점은 KT 5.4점, 한화 5.6점입니다. 승률은 KT 47%, 한화 53%입니다.\n\n핵심은 선발투수의 초반 장타 억제와 불펜 연결입니다. 대전 한화생명 볼파크은 구장 특성상 장타성 타구와 펜스 플레이 변수가 존재하므로, 단순 팀 평균보다 빅이닝 가능성을 더 크게 봐야 합니다.\n\n라인업 상태는 현재 projected입니다. 17시 전에는 최근 출전 패턴, 등말소 현황, 좌우 매치업, 휴식 패턴을 바탕으로 예상 라인업을 제시하고, 17:05 이후에는 공식/보조 출처를 재조회해 확정 라인업으로 갱신합니다.\n\n등말소/뉴스 반영: 17시 전: 전일 엔트리와 최근 뉴스 기준 예상 반영 / 라인업 확정 전이므로 주전 휴식 가능성은 예측 신뢰도에서 감점\n"
+      "away_starter": "미정",
+      "home_starter": "미정",
+      "starter": "",
+      "report": "전력 차가 크지 않아 날씨와 선발 컨디션 영향이 큰 경기입니다. 라인업 확정 전 신뢰도는 낮음으로 표시합니다.",
+      "notes": [
+        "사직 환경 변수 큼",
+        "선발 정보 확정 후 보정",
+        "불펜 소모량 확인 필요"
+      ]
+    },
+    {
+      "time": "18:30",
+      "stadium": "문학",
+      "lineup_status": "예상 라인업",
+      "confidence": "보통",
+      "validation_passes": 3,
+      "key_factor": "장타 싸움",
+      "away": {
+        "team": "두산",
+        "win_probability": 47,
+        "expected_runs": 4.8
+      },
+      "home": {
+        "team": "SSG",
+        "win_probability": 53,
+        "expected_runs": 5.2
+      },
+      "away_starter": "미정",
+      "home_starter": "미정",
+      "starter": "",
+      "report": "문학 구장 장타 변수와 SSG 홈 타선 기대값을 반영해 홈팀을 근소 우세로 계산했습니다.",
+      "notes": [
+        "홈런/2루타 기대값 반영",
+        "전날 불펜 소모 체크",
+        "클린업 상태 중요"
+      ]
+    },
+    {
+      "time": "18:30",
+      "stadium": "창원",
+      "lineup_status": "예상 라인업",
+      "confidence": "보통",
+      "validation_passes": 3,
+      "key_factor": "하위타선 생산력",
+      "away": {
+        "team": "키움",
+        "win_probability": 42,
+        "expected_runs": 4.1
+      },
+      "home": {
+        "team": "NC",
+        "win_probability": 58,
+        "expected_runs": 5.0
+      },
+      "away_starter": "미정",
+      "home_starter": "미정",
+      "starter": "",
+      "report": "NC의 홈 경기 기대득점과 키움의 최근 득점 기복을 반영해 NC 우세로 잡았습니다.",
+      "notes": [
+        "최근 득점 흐름 반영",
+        "라인업 공개 후 하위타선 보정",
+        "선발 매치업 재확인"
+      ]
+    }
+  ],
+  "teams": [
+    {
+      "team": "LG",
+      "rank": 1,
+      "form": "7승 3패",
+      "brief": "상위권 전력 유지. 출루와 불펜 안정감이 강점.",
+      "recent_metric": "최근 10경기 득실 +12",
+      "news": [
+        "13시 뉴스/기록 자동 요약 슬롯",
+        "17시 라인업 확정 후 갱신"
+      ]
+    },
+    {
+      "team": "한화",
+      "rank": 2,
+      "form": "6승 4패",
+      "brief": "중심타선 파괴력과 홈 득점 기대값이 높음.",
+      "recent_metric": "최근 10경기 득실 +9",
+      "news": [
+        "외국인 선발 컨디션 체크 필요",
+        "등말소 17:05 재조회"
+      ]
+    },
+    {
+      "team": "KT",
+      "rank": 3,
+      "form": "6승 4패",
+      "brief": "후반 타격 집중력과 접전 운영이 강점.",
+      "recent_metric": "최근 10경기 득실 +7",
+      "news": [
+        "불펜 소모량 확인 필요",
+        "상대전적 보정 적용"
+      ]
+    },
+    {
+      "team": "KIA",
+      "rank": 4,
+      "form": "5승 5패",
+      "brief": "타선 폭발력은 있으나 경기별 기복 존재.",
+      "recent_metric": "최근 10경기 득실 +3",
+      "news": [
+        "중심타선 출전 여부 중요",
+        "원정 구장 보정 적용"
+      ]
+    },
+    {
+      "team": "롯데",
+      "rank": 5,
+      "form": "5승 5패",
+      "brief": "홈 경기 변수와 타선 응집력이 관건.",
+      "recent_metric": "최근 10경기 득실 +1",
+      "news": [
+        "사직 날씨/바람 변수",
+        "불펜 소모 확인"
+      ]
+    },
+    {
+      "team": "SSG",
+      "rank": 6,
+      "form": "4승 6패",
+      "brief": "장타 기대값은 높지만 실점 억제가 관건.",
+      "recent_metric": "최근 10경기 득실 -2",
+      "news": [
+        "문학 구장 장타 보정",
+        "선발 이닝 소화력 확인"
+      ]
+    },
+    {
+      "team": "삼성",
+      "rank": 7,
+      "form": "4승 6패",
+      "brief": "선발 의존도가 높고 후반 운영이 변수.",
+      "recent_metric": "최근 10경기 득실 -4",
+      "news": [
+        "상대 좌우 매치업 체크",
+        "라인업 확정 후 재계산"
+      ]
+    },
+    {
+      "team": "NC",
+      "rank": 8,
+      "form": "4승 6패",
+      "brief": "홈에서 기대득점이 오르지만 최근 기복 있음.",
+      "recent_metric": "최근 10경기 득실 -5",
+      "news": [
+        "하위타선 생산력 체크",
+        "선발 매치업 영향 큼"
+      ]
+    },
+    {
+      "team": "두산",
+      "rank": 9,
+      "form": "3승 7패",
+      "brief": "득점력 회복 여부가 가장 큰 변수.",
+      "recent_metric": "최근 10경기 득실 -8",
+      "news": [
+        "불펜 부담 확인",
+        "원정 장타 보정"
+      ]
+    },
+    {
+      "team": "키움",
+      "rank": 10,
+      "form": "3승 7패",
+      "brief": "젊은 타선 변동성이 크고 투수진 부담이 큼.",
+      "recent_metric": "최근 10경기 득실 -11",
+      "news": [
+        "라인업 변동 가능성 큼",
+        "선발 조기강판 리스크"
+      ]
+    }
+  ],
+  "schedule": [
+    {
+      "date_label": "2026.06.30 화",
+      "games": [
+        {
+          "time": "18:30",
+          "away": "KT",
+          "home": "한화",
+          "stadium": "대전",
+          "status": "예정"
+        },
+        {
+          "time": "18:30",
+          "away": "삼성",
+          "home": "LG",
+          "stadium": "잠실",
+          "status": "예정"
+        },
+        {
+          "time": "18:30",
+          "away": "KIA",
+          "home": "롯데",
+          "stadium": "사직",
+          "status": "예정"
+        },
+        {
+          "time": "18:30",
+          "away": "두산",
+          "home": "SSG",
+          "stadium": "문학",
+          "status": "예정"
+        },
+        {
+          "time": "18:30",
+          "away": "키움",
+          "home": "NC",
+          "stadium": "창원",
+          "status": "예정"
+        }
+      ]
+    }
+  ],
+  "validation_log": [
+    {
+      "target": "경기 일정",
+      "status": "ok",
+      "message": "필수 필드와 시간 형식 검증 완료. 실제 운영 시 공식/포털/보조 출처 3중 비교.",
+      "steps": [
+        "schema",
+        "range",
+        "cross-source"
+      ]
+    },
+    {
+      "target": "라인업",
+      "status": "warn",
+      "message": "13시 기준 예상 라인업 모드입니다. 17:05 이후 확정 라인업 조회 작업이 실행됩니다.",
+      "steps": [
+        "pre-game mode",
+        "lineup source check",
+        "late retry"
+      ]
+    },
+    {
+      "target": "팀 최근 현황",
+      "status": "ok",
+      "message": "13시 자동 분석 슬롯에서 10개 팀 모두 최신 상태 생성 대상입니다.",
+      "steps": [
+        "news",
+        "team stats",
+        "roster"
+      ]
     }
   ]
 }

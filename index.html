@@ -4,82 +4,76 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>KBO Match Lab</title>
-  <meta name="description" content="매일 KBO 경기 전력분석, 예상 라인업, 등말소, 기대득점, 승패확률 리포트" />
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="hero">
+  <header class="topbar">
     <div>
-      <p class="eyebrow">KBO Match Lab</p>
-      <h1>오늘의 KBO 전력분석 리포트</h1>
-      <p class="subtitle">선발 · 최근 흐름 · 상대전적 · 구장 · 날씨 · 라인업 변수를 반영해 경기별 기대득점과 승률을 보여줍니다.</p>
+      <p class="eyebrow">PRIVATE KBO PREDICTION DASHBOARD</p>
+      <h1>KBO Match Lab</h1>
+      <p id="subtitle" class="subtitle">오늘 경기와 팀 현황을 불러오는 중...</p>
     </div>
-    <div class="status-card">
-      <span id="data-status">데이터 로딩 중</span>
-      <strong id="today-label">-</strong>
-      <small id="verification-label">검증 대기</small>
+    <div class="statusBox">
+      <span id="todayLabel">-</span>
+      <strong id="modeLabel">-</strong>
+      <small id="updatedAt">-</small>
     </div>
   </header>
 
+  <nav class="tabs" aria-label="main navigation">
+    <button class="tab active" data-tab="today">오늘 분석</button>
+    <button class="tab" data-tab="teams">팀 최근 현황</button>
+    <button class="tab" data-tab="schedule">KBO 일정</button>
+    <button class="tab" data-tab="verify">검증 로그</button>
+  </nav>
+
   <main>
-    <section class="notice" id="notice"></section>
-    <section class="grid" id="games"></section>
+    <section id="today" class="panel active">
+      <section class="sectionHead">
+        <div>
+          <h2>오늘 경기 승률</h2>
+          <p>사진처럼 한눈에 보이도록 모든 경기 카드를 압축해서 표시합니다.</p>
+        </div>
+        <span id="lineupStatus" class="pill">라인업 상태 확인 중</span>
+      </section>
+      <div id="matchGrid" class="matchGrid"></div>
+      <section id="selectedReport" class="reportCard empty">경기 카드를 누르면 상세 리포트가 표시됩니다.</section>
+    </section>
+
+    <section id="teams" class="panel">
+      <section class="sectionHead">
+        <div>
+          <h2>10개 팀 최근 현황</h2>
+          <p>매일 13:00 KST 자동 수집 기준. 최근 흐름, 뉴스, 등말소/부상 키워드를 요약합니다.</p>
+        </div>
+      </section>
+      <div id="teamGrid" class="teamGrid"></div>
+    </section>
+
+    <section id="schedule" class="panel">
+      <section class="sectionHead">
+        <div>
+          <h2>KBO 일정</h2>
+          <p>오늘/이번 주 경기 일정을 표로 보여줍니다.</p>
+        </div>
+      </section>
+      <div id="scheduleList" class="scheduleList"></div>
+    </section>
+
+    <section id="verify" class="panel">
+      <section class="sectionHead">
+        <div>
+          <h2>데이터 검증</h2>
+          <p>각 데이터는 최소 3단계 검증을 통과하도록 설계했습니다.</p>
+        </div>
+      </section>
+      <div id="verifyList" class="verifyList"></div>
+    </section>
   </main>
 
   <footer>
-    <p>분석은 참고용입니다. 데이터 출처별 값이 다르면 자동 검증 결과와 경고를 함께 표시합니다.</p>
+    <p>개인용 자동 분석 대시보드 · GitHub Actions + Python collector + AI report pipeline ready</p>
   </footer>
-
-  <template id="game-template">
-    <article class="game-card">
-      <div class="game-top">
-        <div>
-          <p class="venue"></p>
-          <h2 class="matchup"></h2>
-        </div>
-        <div class="pick-box">
-          <span>예측</span>
-          <strong class="pick"></strong>
-        </div>
-      </div>
-
-      <div class="prob-row">
-        <div>
-          <span class="away-team"></span>
-          <strong class="away-prob"></strong>
-        </div>
-        <div class="bar"><span class="away-bar"></span><span class="home-bar"></span></div>
-        <div>
-          <span class="home-team"></span>
-          <strong class="home-prob"></strong>
-        </div>
-      </div>
-
-      <div class="scoreline"></div>
-
-      <div class="section-title">핵심 변수</div>
-      <ul class="bullets key-factors"></ul>
-
-      <div class="section-title">선발투수</div>
-      <div class="two-col pitchers"></div>
-
-      <div class="section-title">라인업</div>
-      <div class="lineup-status"></div>
-      <div class="two-col lineups"></div>
-
-      <div class="section-title">등말소 / 뉴스 반영</div>
-      <ul class="bullets roster-news"></ul>
-
-      <div class="section-title">검증 로그</div>
-      <div class="verification"></div>
-
-      <details>
-        <summary>보고서 전문 보기</summary>
-        <div class="report"></div>
-      </details>
-    </article>
-  </template>
-
-  <script src="./app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
