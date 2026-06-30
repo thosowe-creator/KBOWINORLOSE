@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KBO Match Lab</title>
+  <meta name="description" content="매일 KBO 경기 전력분석, 예상 라인업, 등말소, 기대득점, 승패확률 리포트" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">KBO Match Lab</p>
+      <h1>오늘의 KBO 전력분석 리포트</h1>
+      <p class="subtitle">선발 · 최근 흐름 · 상대전적 · 구장 · 날씨 · 라인업 변수를 반영해 경기별 기대득점과 승률을 보여줍니다.</p>
+    </div>
+    <div class="status-card">
+      <span id="data-status">데이터 로딩 중</span>
+      <strong id="today-label">-</strong>
+      <small id="verification-label">검증 대기</small>
+    </div>
+  </header>
+
+  <main>
+    <section class="notice" id="notice"></section>
+    <section class="grid" id="games"></section>
+  </main>
+
+  <footer>
+    <p>분석은 참고용입니다. 데이터 출처별 값이 다르면 자동 검증 결과와 경고를 함께 표시합니다.</p>
+  </footer>
+
+  <template id="game-template">
+    <article class="game-card">
+      <div class="game-top">
+        <div>
+          <p class="venue"></p>
+          <h2 class="matchup"></h2>
+        </div>
+        <div class="pick-box">
+          <span>예측</span>
+          <strong class="pick"></strong>
+        </div>
+      </div>
+
+      <div class="prob-row">
+        <div>
+          <span class="away-team"></span>
+          <strong class="away-prob"></strong>
+        </div>
+        <div class="bar"><span class="away-bar"></span><span class="home-bar"></span></div>
+        <div>
+          <span class="home-team"></span>
+          <strong class="home-prob"></strong>
+        </div>
+      </div>
+
+      <div class="scoreline"></div>
+
+      <div class="section-title">핵심 변수</div>
+      <ul class="bullets key-factors"></ul>
+
+      <div class="section-title">선발투수</div>
+      <div class="two-col pitchers"></div>
+
+      <div class="section-title">라인업</div>
+      <div class="lineup-status"></div>
+      <div class="two-col lineups"></div>
+
+      <div class="section-title">등말소 / 뉴스 반영</div>
+      <ul class="bullets roster-news"></ul>
+
+      <div class="section-title">검증 로그</div>
+      <div class="verification"></div>
+
+      <details>
+        <summary>보고서 전문 보기</summary>
+        <div class="report"></div>
+      </details>
+    </article>
+  </template>
+
+  <script src="./app.js"></script>
+</body>
+</html>

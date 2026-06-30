@@ -1,0 +1,101 @@
+{
+  "generatedAtKST": "2026-06-30 13:57 KST",
+  "statusText": "라인업 예상 단계",
+  "verificationSummary": "3-pass enabled",
+  "notice": "MVP 데모 데이터입니다. 실서비스에서는 scripts/update_data.py의 SourceAdapter에 공식/허가 데이터 소스를 연결하세요.",
+  "games": [
+    {
+      "date": "2026-06-30",
+      "time": "18:30",
+      "awayTeam": "KT",
+      "homeTeam": "한화",
+      "stadium": "대전 한화생명 볼파크",
+      "awayStarter": {
+        "name": "맷 사우어",
+        "era": 4.54,
+        "whip": 1.31,
+        "recentNote": "최근 등판 기복. 5~6이닝 3실점권 기대"
+      },
+      "homeStarter": {
+        "name": "윌켈 에르난데스",
+        "era": 4.49,
+        "whip": 1.35,
+        "recentNote": "최근 피홈런 리스크. 장타 억제가 핵심"
+      },
+      "headToHead": {
+        "awayWins": 4,
+        "homeWins": 2,
+        "awayRunsPerGame": 8.67,
+        "homeRunsPerGame": 7.5
+      },
+      "prediction": {
+        "pick": "한화",
+        "awayWinProbability": 0.47,
+        "homeWinProbability": 0.53,
+        "awayExpectedRuns": 5.38,
+        "homeExpectedRuns": 5.6,
+        "confidence": "보통"
+      },
+      "lineup": {
+        "status": "projected",
+        "away": [
+          "1. CF 배정대",
+          "2. RF 최원준",
+          "3. DH 강현우",
+          "4. 1B 문상철",
+          "5. LF 김민혁",
+          "6. 3B 황재균",
+          "7. 2B 오윤석",
+          "8. C 장성우",
+          "9. SS 심우준"
+        ],
+        "home": [
+          "1. 2B 문현빈",
+          "2. RF 페라자",
+          "3. DH 강백호",
+          "4. 3B 노시환",
+          "5. 1B 장규현",
+          "6. LF 김태연",
+          "7. CF 이원석",
+          "8. C 허인서",
+          "9. SS 이도윤"
+        ]
+      },
+      "rosterNews": [
+        "17시 전: 전일 엔트리와 최근 뉴스 기준 예상 반영",
+        "라인업 확정 전이므로 주전 휴식 가능성은 예측 신뢰도에서 감점"
+      ],
+      "keyFactors": [
+        "대전 한화생명 볼파크 구장 보정 반영",
+        "선발투수 최근 흐름과 시즌 ERA 동시 반영",
+        "상대전적은 표시하되 표본 한계 때문에 낮은 가중치 적용",
+        "라인업 확정 전/후 예측을 분리"
+      ],
+      "verification": {
+        "checks": [
+          {
+            "name": "1차 스키마 검증",
+            "status": "PASS",
+            "message": "필수 필드 정상"
+          },
+          {
+            "name": "2차 범위 검증",
+            "status": "PASS",
+            "message": "ERA/WHIP 등 수치 범위 정상"
+          },
+          {
+            "name": "3차 교차 검증",
+            "status": "PASS",
+            "message": "동일 항목 최소 3개 출처 기준으로 비교하도록 설계"
+          },
+          {
+            "name": "라인업 상태 검증",
+            "status": "PASS",
+            "message": "17시 전 projected, 17:05 이후 confirmed 후보로 전환"
+          }
+        ]
+      },
+      "report": "KT와 한화의 오늘 경기는 선발 매치업, 최근 득점 흐름, 상대전적, 구장 특성을 함께 보면 한화 쪽을 근소 우세로 잡습니다.\n\n예상 기대득점은 KT 5.4점, 한화 5.6점입니다. 승률은 KT 47%, 한화 53%입니다.\n\n핵심은 선발투수의 초반 장타 억제와 불펜 연결입니다. 대전 한화생명 볼파크은 구장 특성상 장타성 타구와 펜스 플레이 변수가 존재하므로, 단순 팀 평균보다 빅이닝 가능성을 더 크게 봐야 합니다.\n\n라인업 상태는 현재 projected입니다. 17시 전에는 최근 출전 패턴, 등말소 현황, 좌우 매치업, 휴식 패턴을 바탕으로 예상 라인업을 제시하고, 17:05 이후에는 공식/보조 출처를 재조회해 확정 라인업으로 갱신합니다.\n\n등말소/뉴스 반영: 17시 전: 전일 엔트리와 최근 뉴스 기준 예상 반영 / 라인업 확정 전이므로 주전 휴식 가능성은 예측 신뢰도에서 감점\n"
+    }
+  ]
+}
